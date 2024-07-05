@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import Grid from '@mui/material/Grid';
 import { Box, Typography } from '@mui/material';
+import {ThemeProvider} from '@mui/material/styles';
+import {theme} from '../styles/themes';
 
 const LineOfBusinesses = () => {
   const [lineOfBusinesses, setLineOfBusinesses] = useState([]);
@@ -61,12 +63,14 @@ const LineOfBusinesses = () => {
         >
           {lineOfBusinesses.map((lineOfBusinesses, index) => (
             <Grid item xs={6} md={4} key={index}>
-              <Card
-                firstName={lineOfBusinesses.firstName}
-                lastName={lineOfBusinesses.lastName}
-                hairColor={lineOfBusinesses.hair.color}
-                bloodGroup={lineOfBusinesses.bloodGroup}
-              />
+              <ThemeProvider theme={theme}>
+                <Card
+                  firstName={lineOfBusinesses.firstName}
+                  lastName={lineOfBusinesses.lastName}
+                  hairColor={lineOfBusinesses.hairColor}
+                  bloodGroup={lineOfBusinesses.bloodGroup}
+                />
+              </ThemeProvider>
             </Grid>
           ))}
         </Grid>

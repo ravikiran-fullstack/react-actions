@@ -20,19 +20,28 @@ const CenteredDiv = styled('div')({
   alignItems: 'center',
 })
 
+const StyledHr = styled('hr')`
+  background-color: ${(props) => props.theme.colors.secondary};
+  height: 1px;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`;
+
 const Card = ({ firstName, lastName, hairColor, bloodGroup }) => {
 
   return (
-    <StyledBox
-      component="section"
-    >
+    <StyledBox component="section">
       <div>
         {firstName}: {lastName}
       </div>
-      <hr />
+      <StyledHr />
       <CenteredDiv>
-        <div style={{margin:'10px'}}>Hair Color: {hairColor}</div>
-        <div style={{color:'red',margin:'10px'}}>Blood Group: 
+        <div style={{ margin: '10px' }}>Hair Color: {hairColor}</div>
+        <div style={{ color: 'red', margin: '10px', display:'flex' }}>
+          <div>Blood Group:</div>
           <BloodGroup bloodGroup={bloodGroup} />
         </div>
       </CenteredDiv>

@@ -19,13 +19,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v3 # Updated to the latest version
 
     # Setup Node.js environment
     - name: Set up Node
       uses: actions/setup-node@v4
       with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
     # Install dependencies
@@ -38,7 +39,7 @@ jobs:
 
     # Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+      uses: JamesIves/github-pages-deploy-action@4.2.0
       with:
         branch: gh-pages  # The branch the action should deploy to.
         folder: dist  # Vite outputs the production build to the 'dist' folder by default.

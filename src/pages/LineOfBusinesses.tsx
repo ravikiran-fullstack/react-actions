@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import Grid from '@mui/material/Grid';
 import { Box, Typography } from '@mui/material';
-import {ThemeProvider} from '@mui/material/styles';
-import {theme} from '../styles/themes';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from '../styles/themes';
+import { LineOfBusiness } from '../types/types';
 
 const LineOfBusinesses = () => {
-  const [lineOfBusinesses, setLineOfBusinesses] = useState([]);
+  const [lineOfBusinesses, setLineOfBusinesses] = useState<LineOfBusiness[]>(
+    []
+  );
 
   const fetchLineOfBusinesses = async () => {
     try {
@@ -55,7 +58,6 @@ const LineOfBusinesses = () => {
           spacing={3}
           style={{
             backgroundColor: 'white',
-            // border: '1px solid red',
             boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.2)',
             color: 'black',
             width: '100%',
@@ -65,7 +67,6 @@ const LineOfBusinesses = () => {
             <Grid item xs={6} md={4} key={index}>
               <ThemeProvider theme={theme}>
                 <Card
-                  mode="full"
                   firstName={lineOfBusinesses.firstName}
                   lastName={lineOfBusinesses.lastName}
                   hairColor={lineOfBusinesses.hair.color}

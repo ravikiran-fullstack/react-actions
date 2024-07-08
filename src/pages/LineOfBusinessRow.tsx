@@ -4,9 +4,12 @@ import { useEffect, useState } from 'react';
 import { theme } from '../styles/themes';
 import axios from 'axios';
 import Card from '../components/Card';
+import { LineOfBusiness } from '../types/types';
 
 const LineOfBusinessRow = () => {
-  const [lineOfBusinesses, setLineOfBusinesses] = useState([]);
+  const [lineOfBusinesses, setLineOfBusinesses] = useState<LineOfBusiness[]>(
+    []
+  );
 
   const fetchLineOfBusinesses = async () => {
     try {
@@ -31,10 +34,6 @@ const LineOfBusinessRow = () => {
         width: '100vw',
         height: '100vh',
         padding: '20px',
-        // display: 'flex',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // flexDirection: 'column',
       }}
     >
       <Box sx={{ p: 2 }}>

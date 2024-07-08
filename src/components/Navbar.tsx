@@ -17,7 +17,6 @@ const theme = createTheme({
   },
 });
 
-
 const Navbar = () => {
   return (
     <ThemeProvider theme={theme}>

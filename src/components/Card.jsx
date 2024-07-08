@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import BloodGroup from './BloodGroup';
 
 const StyledBox = styled(Box)(({theme}) => ({
+  // width: '300px',
   p: 2,
   boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.1)',
   backgroundColor: '#E0E0E0',
@@ -31,7 +32,13 @@ const StyledHr = styled('hr')`
 `;
 
 const Card = ({ firstName, lastName, hairColor, bloodGroup }) => {
-
+  // console.log(
+  //   'firstName, lastName, hairColor, bloodGroup',
+  //   firstName,
+  //   lastName,
+  //   hairColor,
+  //   bloodGroup
+  // );
   return (
     <StyledBox component="section">
       <div>

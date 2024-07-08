@@ -65,9 +65,10 @@ const LineOfBusinesses = () => {
             <Grid item xs={6} md={4} key={index}>
               <ThemeProvider theme={theme}>
                 <Card
+                  mode="full"
                   firstName={lineOfBusinesses.firstName}
                   lastName={lineOfBusinesses.lastName}
-                  hairColor={lineOfBusinesses.hairColor}
+                  hairColor={lineOfBusinesses.hair.color}
                   bloodGroup={lineOfBusinesses.bloodGroup}
                 />
               </ThemeProvider>

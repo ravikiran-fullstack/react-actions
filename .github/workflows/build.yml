@@ -19,6 +19,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Example step requiring repo access
+      uses: actions/checkout@v2
+      with:
+        repository: 'ravikiran-fullstack/react-actions.git'
+        token: ${{ secrets.GA_act_token_react_actions }}
+
     - name: Checkout code
       uses: actions/checkout@v3 # Updated to the latest version
 
